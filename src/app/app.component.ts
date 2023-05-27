@@ -7,7 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-first-homework';
-
   isCounterAvailable: boolean = true;
   onChangeCounter () {
     this.isCounterAvailable = !this.isCounterAvailable;

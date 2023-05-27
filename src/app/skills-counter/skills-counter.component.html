@@ -1,6 +1,9 @@
+<div class="main-body-container">
+<h2> <span>{{ name }}</span> has following skills: </h2>
+
 <ol>
   <li *ngFor="let skill of skills; index as i">
-    <div>
+    <div class="skills-list">
       {{ skill }}
       <div>
         <div *ngIf="currentEditingIndex === i">
@@ -20,11 +23,11 @@
     </div>
   </li>
 </ol>
+
 <div class="input-skills-container">
   <input [value]="value" (change)="onInputChange($event)" type="text" />
   <button (click)="addSkill(value)">Add skill</button>
+  <p> Totally: {{ counter }} skills</p>
 </div>
-<hr />
-<p>Counter: {{ counter }}</p>
-<button (click)="increment()">Increment</button>
-<button (click)="decrement()">Decrement</button>
+
+</div>

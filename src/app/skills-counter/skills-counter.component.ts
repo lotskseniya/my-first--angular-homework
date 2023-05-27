@@ -1,4 +1,4 @@
-import { Component, DoCheck, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, DoCheck, Input, OnDestroy } from '@angular/core';
 import { findIndex } from 'rxjs';
 
 @Component({
@@ -6,39 +6,17 @@ import { findIndex } from 'rxjs';
   templateUrl: './skills-counter.component.html',
   styleUrls: ['./skills-counter.component.css'],
 })
-export class SkillsCounterComponent implements OnInit, DoCheck, OnDestroy {
+export class SkillsCounterComponent implements DoCheck, OnDestroy {
   @Input() inputData: string = '';
-  @Input() baseData: number[] = [];
-  @Input() givenFunction: (() => void) | null = null;
-
+  
   name: string = 'Kseniya';
-  counter: number = 0;
-
   value: string = '';
   searchValue: string = '';
   currentEditingIndex: number | null = null;
   editingValue: string = '';
   skills: string[] = ['JavaScript', 'HTML', 'CSS', 'Angular'];
+  counter: number = this.skills.length;
 
-  todos: { completed: boolean; id: number; title: string; userId: number }[] =
-    [];
-  todosSearchResults: typeof this.todos = [];
-
-  ngOnInit() {
-    this.givenFunction && this.givenFunction();
-
-    fetch('https://jsonplaceholder.typicode.com/todos')
-      .then((response) => response.json())
-      .then((json) => {
-        this.todos = json;
-
-        const localStorageSearchValue =
-          localStorage.getItem('searchValue') || '';
-        this.searchValue = localStorageSearchValue;
-
-        this.filterTodos();
-      });
-  }
 
   ngDoCheck() {
     console.log('Data has been updated');
@@ -48,29 +26,14 @@ export class SkillsCounterComponent implements OnInit, DoCheck, OnDestroy {
     console.log('Component is preparing for destroying');
   }
 
-  onSearchInputChange(event: any) {
-    this.searchValue = event.target.value;
-    localStorage.setItem('searchValue', this.searchValue);
-    this.filterTodos();
-  }
-
-  filterTodos() {
-    this.todosSearchResults = this.todos.filter(({ title }) =>
-      title.includes(this.searchValue)
-    );
-  }
-
-  increment() {
-    this.counter = this.counter + 1;
-  }
-
-  decrement() {
-    this.counter = this.counter - 1;
+  countSkills() {
+    this.counter = this.skills.length;
   }
 
   addSkill(skill: string) {
     this.skills.push(skill);
     this.value = '';
+    this.countSkills();
   }
 
   deleteSkill(index: number) {
@@ -78,7 +41,7 @@ export class SkillsCounterComponent implements OnInit, DoCheck, OnDestroy {
     if (this.currentEditingIndex >= 0) {
       this.skills.splice(this.currentEditingIndex, 1);
       this.currentEditingIndex = null;
-      return;
+      this.countSkills();
     }
   }
 

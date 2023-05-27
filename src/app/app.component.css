@@ -1,0 +1,11 @@
+.main-container{
+    background-image: linear-gradient(
+        180deg,
+        #59595d 0%,
+        #3e4d51 35%,
+        #adcdd3 100%
+      );
+    color: azure;  
+    display: flex;
+    flex-direction: row;
+}

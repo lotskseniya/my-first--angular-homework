@@ -4,11 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SkillsCounterComponent } from './skills-counter/skills-counter.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SkillsCounterComponent
+    SkillsCounterComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
