@@ -1,4 +1,4 @@
-import { Component, DoCheck, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, DoCheck, Input, OnDestroy } from '@angular/core';
 import { findIndex } from 'rxjs';
 
 @Component({
@@ -6,20 +6,15 @@ import { findIndex } from 'rxjs';
   templateUrl: './skills-counter.component.html',
   styleUrls: ['./skills-counter.component.css'],
 })
-export class SkillsCounterComponent implements OnInit, DoCheck, OnDestroy {
+export class SkillsCounterComponent implements DoCheck, OnDestroy {
   @Input() inputData: string = '';
-  @Input() baseData: number[] = [];
   @Input() givenFunction: (() => void) | null = null;
-
+  
   name: string = 'Kseniya';
-  counter: number = 0;
-
   value: string = '';
   searchValue: string = '';
   currentEditingIndex: number | null = null;
-  editingValue: string = '';
-  skills: string[] = ['JavaScript', 'HTML', 'CSS', 'Angular'];
-
+  editingValue: string = '';  
   todos: { completed: boolean; id: number; title: string; userId: number }[] =
     [];
   todosSearchResults: typeof this.todos = [];
@@ -60,46 +55,13 @@ export class SkillsCounterComponent implements OnInit, DoCheck, OnDestroy {
     );
   }
 
-  increment() {
-    this.counter = this.counter + 1;
-  }
-
-  decrement() {
-    this.counter = this.counter - 1;
-  }
-
-  addSkill(skill: string) {
-    this.skills.push(skill);
-    this.value = '';
-  }
-
-  deleteSkill(index: number) {
+  deleteTodos(index: number) {
     this.currentEditingIndex = index;
-    if (this.currentEditingIndex >= 0) {
-      this.skills.splice(this.currentEditingIndex, 1);
-      this.currentEditingIndex = null;
-      return;
+    this.todos.splice(this.currentEditingIndex, 1);
+    if(this.searchValue){
+       this.todosSearchResults.splice(this.currentEditingIndex, 1);
+       return;
     }
-  }
-
-  editSkill(index: number) {
-    this.currentEditingIndex = index;
-  }
-
-  onInputChange(event: any) {
-    this.value = event.target.value;
-  }
-
-  onEditInputChange(event: any) {
-    this.editingValue = event.target.value;
-  }
-
-  onSaveEdit() {
-    if (this.editingValue) {
-      this.skills[this.currentEditingIndex!] = this.editingValue;
-    }
-    this.currentEditingIndex = null;
-    this.editingValue = '';
   }
 }
 

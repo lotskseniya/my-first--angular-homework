@@ -1,30 +1,17 @@
-<ol>
-  <li *ngFor="let skill of skills; index as i">
-    <div>
-      {{ skill }}
+<div class="main-body-container">
+
+  <h2>Todo Lists:</h2>
+
+  <section>
+    <input type="text" placeholder="search todo by title" (input)="onSearchInputChange($event)" [value]="searchValue"/>
+    <div *ngFor="let todo of searchValue ? todosSearchResults : todos; index as i" class="todo">
       <div>
-        <div *ngIf="currentEditingIndex === i">
-          <input
-            [value]="skills[i]"
-            (change)="onEditInputChange($event)"
-            type="text"
-            placeholder="Enter new Skill name"
-          />
-          <button (click)="onSaveEdit()">Save</button>
-        </div>
-        <button *ngIf="currentEditingIndex !== i" (click)="editSkill(i)">
-          Edit
-        </button>
-        <button (click)="deleteSkill(i)">Delete</button>
+        <span> {{ todo.id }} </span>
+       <p class="todo-list-style">{{ todo.title }}</p>
+       <span> {{ todo.completed }} </span>
       </div>
+      <button (click)="deleteTodos(i)">Delete</button>
     </div>
-  </li>
-</ol>
-<div class="input-skills-container">
-  <input [value]="value" (change)="onInputChange($event)" type="text" />
-  <button (click)="addSkill(value)">Add skill</button>
+  </section>
+
 </div>
-<hr />
-<p>Counter: {{ counter }}</p>
-<button (click)="increment()">Increment</button>
-<button (click)="decrement()">Decrement</button>
