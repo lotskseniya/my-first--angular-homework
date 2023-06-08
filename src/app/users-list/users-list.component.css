@@ -10,3 +10,114 @@ li{
     display: flex;
     align-items: center;
 }
+
+.input-form{
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+}
+
+.user-card{
+    width: 26rem;
+    display: flex;
+    border: 1px solid azure;
+    margin: 2px;
+    padding: 5px 35px 5px 5px;
+    margin-inline-start: 20px;
+}
+
+.user-data{
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.user-image{
+    width: 80px;
+    align-self: first baseline;
+    margin-inline-start: 30px;
+    margin-block-start: 40px;
+}
+
+.data-headers{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+button{
+    color: rgba(0, 0, 0, 0.72);
+    text-decoration: none;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 #ffffff;
+    box-shadow:
+      2px 2px 0.5em rgba(122, 122, 122, 0.55),
+      inset 1px 1px 0 rgba(255, 255, 255, 0.9),
+      inset -1px -1px 0 rgba(0, 0, 0, 0.5)
+    ;
+    border: 1px solid #cacade;
+    border-radius: 5px;
+    background:
+      -moz-linear-gradient(
+      -72deg,
+      #dedeff,
+      #ffffff 16%,
+      #dedeff 21%,
+      #ffffff 24%,
+      #dedeff 36%,
+      #ffffff 45%,
+      #ffffff 60%,
+      #dedeff 72%,
+      #ffffff 80%,
+      #dedeff 84%,
+      #555564
+    );
+    background:
+    -webkit-linear-gradient(
+      -72deg,
+      #dedeff,
+      #ffffff 16%,
+      #dedeff 21%,
+      #ffffff 24%,
+      #dedeff 36%,
+      #ffffff 45%,
+      #ffffff 60%,
+      #dedeff 72%,
+      #ffffff 80%,
+      #dedeff 84%,
+      #555564
+    );
+    background:
+    -o-linear-gradient(
+      -72deg,
+      #dedeff,
+      #ffffff 16%,
+      #dedeff 21%,
+      #ffffff 24%,
+      #dedeff 36%,
+      #ffffff 45%,
+      #ffffff 60%,
+      #dedeff 72%,
+      #ffffff 80%,
+      #dedeff 84%,
+      #555564
+    );
+    background:
+    linear-gradient(
+      -72deg,
+      #dedeff,
+      #ffffff 16%,
+      #dedeff 21%,
+      #ffffff 24%,
+      #dedeff 36%,
+      #ffffff 45%,
+      #ffffff 60%,
+      #dedeff 72%,
+      #ffffff 80%,
+      #dedeff 94%,
+      #555564
+    );  
+}
+
+input{
+    font-size: 16px;
+    border-radius: 2px;
+}

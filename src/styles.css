@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+    background: #010101;
+    background-image: radial-gradient(circle at 25% -10%, rgba(170, 20, 240, 0.49) 0%, rgba(170, 20, 240, 0) 24%), radial-gradient(circle at 120% 35%, rgba(170, 20, 240, 0.49) 0%, rgba(170, 20, 240, 0) 24%), radial-gradient(circle at -20% 70%, rgba(170, 20, 240, 0.49) 0%, rgba(170, 20, 240, 0) 24%), radial-gradient(circle at 118% 75%, rgba(170, 20, 240, 0.49) 0%, rgba(170, 20, 240, 0) 24%), radial-gradient(circle at -20% 95%, rgba(170, 20, 240, 0.49) 0%, rgba(170, 20, 240, 0) 22%), radial-gradient(circle at 118% 100%, rgba(170, 20, 240, 0.49) 0%, rgba(170, 20, 240, 0) 22%),
+    radial-gradient(circle at 85% 98%, rgba(170, 20, 240, 0.49) 0%, rgba(170, 20, 240, 0) 14%);
+    background-repeat: no-repeat;
+      color: azure;  
+}
+
+button{
+  border: none;
+  background-color: transparent;
+  color: azure;
+  margin: 4px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+  letter-spacing: -1.5%;
+  cursor: pointer; 
+}

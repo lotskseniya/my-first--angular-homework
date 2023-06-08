@@ -14,13 +14,4 @@ export class UserService {
     console.log(data, 'users from server');
   }
 
-  async searchFilms(filmName: string) {
-    const json = await fetch(`${this.url}${filmName}`, this.options);
-    const responseData = await json.json();
-  
-    if (responseData.d) {
-      this.films = responseData.d;
-    }
-    console.log(responseData)
-  }
 }

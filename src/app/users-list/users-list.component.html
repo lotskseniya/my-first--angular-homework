@@ -1,7 +1,18 @@
-<h1>Users</h1>
+<h1>Users List:</h1>
 
-<ul>
-    <li *ngFor="let user of usersList" >
-        <app-user-item [user]="user" [usersList]="usersList"></app-user-item>
-    </li>
-</ul>
+<div class="input-form">
+  <input type="text" [value]="value" (input)="onInput($event)"/>
+  <button (click)="onSearch()">Search</button>
+</div>
+
+<div class="user-card" *ngFor="let user of value ? usersSearchResults : users">
+    <div class="user-image">
+    <i class="fa-solid fa-user-tie fa-2xl"></i>
+</div>
+<div class="user-data">
+  <p> <span class="data-headers">Name:</span> &NonBreakingSpace; {{ user.name }}</p>
+  <p> <span class="data-headers">City:</span>&NonBreakingSpace; {{ user.address.city }}</p>
+  <p> <span class="data-headers">Company:</span>&NonBreakingSpace; {{ user.company.name }}</p>
+  <p> <span class="data-headers">Phone number:</span>&NonBreakingSpace; {{ user.phone }}</p>
+</div>
+</div>
