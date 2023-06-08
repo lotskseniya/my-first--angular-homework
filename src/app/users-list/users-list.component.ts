@@ -41,8 +41,6 @@ export class UsersListComponent implements OnInit {
   }
 
   onSearch() {
-    // this.userService.searchUsers(this.value);
-
     this.usersSearchResults = this.users.filter(({ name }) =>
       name.includes(this.value)
     );
