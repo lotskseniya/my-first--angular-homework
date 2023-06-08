@@ -8,18 +8,18 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'my-third-homework';
   data: number[] = [100, 105, 90];
-  isCounterAvailable: boolean = true;
+  isCounterAvailable: boolean = false;
 
-  func () {
-    console.log("Works from APP!!!!!!!!!!!", this.data);
-  }
+  // func () {
+  //   console.log("Works from APP!!!!!!!!!!!", this.data);
+  // }
 
-  onChangeCounter () {
-    this.isCounterAvailable = !this.isCounterAvailable;
-    console.log("works")
-  }
+  // onChangeCounter () {
+  //   this.isCounterAvailable = !this.isCounterAvailable;
+  //   console.log("works")
+  // }
 
-  addRandomData () {
-    this.data.push(Math.floor(Math.random() * 150));
-  }
+  // addRandomData () {
+  //   this.data.push(Math.floor(Math.random() * 150));
+  // }
 }

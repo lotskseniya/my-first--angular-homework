@@ -1,0 +1,12 @@
+h2{
+    margin-inline-start: 5rem;
+}
+
+ul{
+    list-style: none;
+}
+
+li{
+    display: flex;
+    align-items: center;
+}

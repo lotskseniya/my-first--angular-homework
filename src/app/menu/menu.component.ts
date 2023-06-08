@@ -16,11 +16,11 @@ export class MenuComponent {
       src: `./icons/Home.png`,
     },
     {
-      name: 'Lists',
+      name: 'Todo-Lists',
       src: './icons/Home.png',
     },
     {
-      name: 'Profile',
+      name: 'Users',
       src: `./icons/Home.png`,
     },
   ];

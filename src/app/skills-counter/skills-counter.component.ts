@@ -14,6 +14,7 @@ export class SkillsCounterComponent implements DoCheck, OnDestroy {
   value: string = '';
   searchValue: string = '';
   currentEditingIndex: number | null = null;
+  todoEditngIndex: number = 0;
   editingValue: string = '';  
   todos: { completed: boolean; id: number; title: string; userId: number }[] =
     [];
@@ -58,10 +59,14 @@ export class SkillsCounterComponent implements DoCheck, OnDestroy {
   deleteTodos(index: number) {
     this.currentEditingIndex = index;
     this.todos.splice(this.currentEditingIndex, 1);
-    if(this.searchValue){
-       this.todosSearchResults.splice(this.currentEditingIndex, 1);
-       return;
-    }
+    
+    // if(this.searchValue){
+    //   for (let item in this.todosSearchResults){
+    //     this.todoEditngIndex = this.todosSearchResults[item].id
+    //     this.todos.splice(this.todoEditngIndex, 1);
+    //     this.todosSearchResults.splice(this.currentEditingIndex, 1);
+    //   }
+    // }
   }
 }
 
