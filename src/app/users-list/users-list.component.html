@@ -5,7 +5,8 @@
   <button (click)="onSearch()">Search</button>
 </div>
 
-<div class="user-card" *ngFor="let user of value ? usersSearchResults : users">
+
+<div class="user-card" *ngFor="let user of value ? usersSearchResults : users index as index">
     <div class="user-image">
     <i class="fa-solid fa-user-tie fa-2xl"></i>
 </div>
@@ -14,5 +15,6 @@
   <p> <span class="data-headers">City:</span>&NonBreakingSpace; {{ user.address.city }}</p>
   <p> <span class="data-headers">Company:</span>&NonBreakingSpace; {{ user.company.name }}</p>
   <p> <span class="data-headers">Phone number:</span>&NonBreakingSpace; {{ user.phone }}</p>
+   <button (click)="deleteUser(index)">Delete</button>
 </div>
 </div>

@@ -7,4 +7,5 @@ export interface RemoteUserInterface {
     company: {
         name: string;
       };
+  id: number;    
 }
